@@ -1,0 +1,17 @@
+<div class="home">
+    <fieldset>
+        <legend>The Items</legend>
+        <form name="theForm" ng-submit="vm.save()">
+            <input type="text" name="iteminput" ng-model="vm.item" required />
+            <div class="error" ng-hide="theForm.iteminput.$error.required">
+            <span>{{theForm.input.$error.required}}</span>
+                <button type="submit">Add Item</button>
+            </div>
+        </form>
+
+        <p ng-if="!vm.items.length">There are no items.</p>
+        <ul ng-if="vm.items.length">
+            <li ng-repeat="item in vm.items">{{item}}</li>
+        </ul>
+    </fieldset>
+</div>
